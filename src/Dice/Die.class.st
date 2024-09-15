@@ -10,11 +10,8 @@ Class {
 
 { #category : 'as yet unclassified' }
 Die class >> withFaces: aNumber [
-"Create and initialize a new die with aNumber faces."
-| instance |
-instance := self new.
-instance faces: aNumber.
-^ instance
+^ self new faces: aNumber; yourself
+
 
 ]
 
@@ -42,5 +39,5 @@ aStream nextPutAll: ' (', faces printString, ')'
 
 { #category : 'accessing' }
 Die >> roll [ 
-  ^ 6 atRandom 
+  ^ faces atRandom 
 ]

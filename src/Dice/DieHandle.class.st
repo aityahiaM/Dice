@@ -10,7 +10,7 @@ Class {
 
 { #category : 'initialization' }
 DieHandle >> addDie: aDie [ 
- dice add: aDie 
+ dice add: aDie.
 ]
 
 { #category : 'initialization' }
@@ -20,5 +20,11 @@ DieHandle >> diceNumber [
 
 { #category : 'initialization' }
 DieHandle >> initialize [ 
- dice := OrderedCollection new 
+ dice := OrderedCollection new. 
+]
+
+{ #category : 'accessing' }
+DieHandle >> roll [
+ " Itère sur chaque dé et collecte ces résultats dans une nouvelle collection pour les additionner par la méthode sum"
+ ^ (dice collect: [ :each | each roll]) sum.
 ]
