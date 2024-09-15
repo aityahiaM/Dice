@@ -8,9 +8,23 @@ Class {
 	#package : 'Dice'
 }
 
+{ #category : 'arithmetic' }
+DieHandle >> + aDieHandle [ 
+ | handle |
+ handle := DieHandle new.
+ dice do: [:each | handle addDie: each].
+ aDieHandle dice do: [:each | handle addDie: aDieHandle].
+ ^ handle
+]
+
 { #category : 'initialization' }
 DieHandle >> addDie: aDie [ 
  dice add: aDie.
+]
+
+{ #category : 'accessing' }
+DieHandle >> dice [ 
+ ^ dice
 ]
 
 { #category : 'initialization' }
