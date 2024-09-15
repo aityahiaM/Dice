@@ -17,3 +17,8 @@ Die >> faces [
 Die >> initialize [ 
   faces := 6
 ]
+
+{ #category : 'accessing' }
+Die >> roll [ 
+  ^ 6 atRandom 
+]
