@@ -39,5 +39,5 @@ aStream nextPutAll: ' (', faces printString, ')'
 
 { #category : 'accessing' }
 Die >> roll [ 
-  ^ faces atRandom 
+  ^ (1 to: faces) atRandom 
 ]
